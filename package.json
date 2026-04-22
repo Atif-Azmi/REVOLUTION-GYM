@@ -1,0 +1,14 @@
+{
+  "name": "revolution-gym-vercel",
+  "version": "1.0.0",
+  "description": "Pre-built Revolution Gym SPA",
+  "main": "index.html",
+  "scripts": {
+    "start": "npx -y serve -s .",
+    "dev": "npx -y serve -s .",
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC"
+}

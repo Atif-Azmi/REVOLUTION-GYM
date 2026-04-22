@@ -1,0 +1,81 @@
+<!DOCTYPE html>
+<html lang="en" class="dark">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1" />
+    <title>Revolution Gym | Get Fit, Get Furious</title>
+    <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Anton&family=Bebas+Neue&family=Inter:wght@400;500;600;700;800;900&display=swap" rel="stylesheet">
+    <script type="module" crossorigin src="/assets/index-BnJLo5if.js"></script>
+    <link rel="stylesheet" crossorigin href="/assets/index-WU7fk_XA.css">
+    <style>
+      /* Custom Animated Cursor Styles */
+      html, body {
+        cursor: none !important;
+      }
+      a, button, [role="button"], input, select, textarea {
+        cursor: none !important;
+      }
+      .cursor-dot {
+        width: 8px;
+        height: 8px;
+        background-color: hsl(var(--primary));
+        box-shadow: 0 0 10px hsl(var(--primary));
+        position: fixed;
+        top: 0;
+        left: 0;
+        transform: translate(-50%, -50%);
+        border-radius: 50%;
+        z-index: 10000;
+        pointer-events: none;
+      }
+      .cursor-outline {
+        width: 40px;
+        height: 40px;
+        border: 2px solid hsl(var(--primary));
+        position: fixed;
+        top: 0;
+        left: 0;
+        transform: translate(-50%, -50%);
+        border-radius: 50%;
+        z-index: 9999;
+        pointer-events: none;
+        transition: left 0.1s ease-out, top 0.1s ease-out, transform 0.2s ease-out, background-color 0.2s ease-out;
+      }
+    </style>
+  </head>
+  <body class="bg-black">
+    <div id="root"></div>
+    <div class="cursor-dot"></div>
+    <div class="cursor-outline"></div>
+    <script>
+      const dot = document.querySelector(".cursor-dot");
+      const outline = document.querySelector(".cursor-outline");
+
+      window.addEventListener("mousemove", (e) => {
+        const posX = e.clientX;
+        const posY = e.clientY;
+        dot.style.left = `${posX}px`;
+        dot.style.top = `${posY}px`;
+        outline.style.left = `${posX}px`;
+        outline.style.top = `${posY}px`;
+      });
+
+      document.addEventListener("mouseover", (e) => {
+        if (e.target.closest("a, button, [role='button']")) {
+          outline.style.transform = "translate(-50%, -50%) scale(1.5)";
+          outline.style.backgroundColor = "hsla(var(--primary) / 0.1)";
+        }
+      });
+
+      document.addEventListener("mouseout", (e) => {
+        if (e.target.closest("a, button, [role='button']")) {
+          outline.style.transform = "translate(-50%, -50%) scale(1)";
+          outline.style.backgroundColor = "transparent";
+        }
+      });
+    </script>
+  </body>
+</html>
