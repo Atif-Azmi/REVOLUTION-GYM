@@ -4,5 +4,9 @@ dist
 .env
 .vercel
 temp_zip_content
-*.webp
-*.png
+# Images and Icons are now allowed
+!*.png
+!*.jpg
+!*.jpeg
+!*.svg
+!*.webp
